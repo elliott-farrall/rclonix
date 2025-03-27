@@ -2,8 +2,9 @@
   description = "Configure rclone using nix";
 
   inputs = {
-    snowfall-lib.url = "github:snowfallorg/lib";
     nixpkgs.url = "github:nixos/nixpkgs";
+    snowfall-lib.url = "github:snowfallorg/lib";
+    snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: inputs.snowfall-lib.mkFlake {
